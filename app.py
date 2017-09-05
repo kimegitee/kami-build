@@ -45,7 +45,7 @@ def settle():
 		m = float(bleach.clean(request.form['m'].replace(',', '.')))
 		n = float(bleach.clean(request.form['n'].replace(',', '.')))
 	except Exception as e:
-		result = HTML_WRAP.format('Giá trị không hợp lệ, vui lòng thử lại')
+		result = HTML_WRAP.format('', '', 'Giá trị không hợp lệ, vui lòng thử lại')
 		return result
 	cols = list(find_next(m, data.iloc[:, 0]))
 	rows = list(find_next(n, data.iloc[:, 1]))
