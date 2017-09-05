@@ -39,6 +39,8 @@ def load_table(filename: str, columns: list) -> pd.DataFrame:
 
 def find_next(value: float, data: pd.Series) -> (float, float):
 	'''Find nearest smaller and bigger values of value'''
+	assert type(data) is pd.Series,\
+		'Expecting a pandas Series, got {} instead'.format(type(data))
 	prev_value = data[data <= value].max()
 	next_value = data[data >= value].min()
 	
@@ -50,4 +52,5 @@ def lookup(val1: float, val2: float, data: pd.DataFrame):
 	col2 = data.iloc[:, 1]
 	for next_val1 in find_next(val1, col1):
 		for next_val2 in find_next(val2, col2):
-			yield data[(col1 == next_val1) & (col2 == next_val2)].iloc[0, 2]
+			result = data[(col1 == next_val1) & (col2 == next_val2)].iloc[0, 2]
+			yield col1, col2, result

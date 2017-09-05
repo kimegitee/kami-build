@@ -1,4 +1,5 @@
 from kami import *
+from flask import flask
 
 if __name__ == '__main__':
 	data = load_table('data/out.txt', columns=['m', 'n', 'alpha'])
