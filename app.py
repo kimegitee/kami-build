@@ -23,9 +23,9 @@ HTML_WRAP = '''\
 		<h1>Tính Độ Lún</h1>
 		<form method=post>
 			Giá trị m:</br>
-			<input type="text" id="m" name="m" value="{}"></input></br>
+			<input type="text" id="m" name="m" value="{}" autocomplete="off"></input></br>
 			Giá trị n:</br>
-			<input type="text" id="n" name="n" value="{}"></input></br>
+			<input type="text" id="n" name="n" value="{}" autocomplete="off" ></input></br>
 			<input id="go" type="submit" value="Tra hệ số alpha"></button>
 		</form>
 		<div class=result>
