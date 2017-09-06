@@ -43,6 +43,11 @@ def find_next(value: float, data: pd.Series) -> (float, float):
 		'Expecting a pandas Series, got {} instead'.format(type(data))
 	prev_value = data[data <= value].max()
 	next_value = data[data >= value].min()
+
+	if np.isnan(prev_value):
+		prev_value = next_value
+	if np.isnan(next_value):
+		next_value = prev_value
 	
 	return prev_value, next_value
 
